@@ -13,7 +13,7 @@ namespace MinimolGames
             Health = maxHealth;
         }
 
-        public void TakeDamage(int amount)
+        public virtual void TakeDamage(int amount)
         {
             if(Health > 0){
                 Health -= amount;

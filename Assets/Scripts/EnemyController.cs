@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-
 namespace MinimolGames
 {
     public class EnemyController : MonoBehaviour
