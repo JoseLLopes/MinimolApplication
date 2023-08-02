@@ -1,6 +1,4 @@
 # MinimolApplication
-Minimol Application
-
 ---
 __Sistema de dano__
 Foi modificado o antigo sistema de detecção de colisão, onde o projétil verificava com um trigger se o objeto que foi colidido estava marcado com a Tag “Enemy”;
@@ -24,7 +22,7 @@ __Problemas detectados:__
 
 __Solução:__
 - Criação de um sistema de “pooling“ para fazer a reutilização de projéteis já instanciados, desabilitando-os na cena após o uso e ficando em espera para poder ser reutilizado quando precisar.
-
+---
 
 __Desempenho__
 
@@ -36,10 +34,10 @@ __Solução:__
 - Removida a procura pelo player a cada frame na função “Update”, melhorando o desempenho do jogo;
 Ativado o GPU Instancing no material, isso faz com que a GPU instancie objetos em massa em vez de renderizar individualmente.
 - Removido o “Rigdibody” do player e do inimigo.
-
+---
 __Vida do inimigo__
 - Criado o script “CharacterHealth” específico para personagens com vida que implementa a interface “IDamageable”. Então quando o projétil encontrar o inimigo, com essa interface implementada, vai chamar o método “TakeDamage” e executar os eventos específicos da classe “CharacterHealth”.
-
+---
 __Vida do player__
 - Criado o script “PlayerHealth” herdando da classe “CharacterHealth”, sobrescrevendo o método “TakeDamage” e adicionando variáveis para controlar o espaço de tempo que o player não pode ser atingido.
 
