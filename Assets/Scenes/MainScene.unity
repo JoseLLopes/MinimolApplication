@@ -723,6 +723,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 652897069, guid: e4a90ba45b4dfcb4593f2dfaf5571eca, type: 3}
+      propertyPath: Health
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 652897069, guid: e4a90ba45b4dfcb4593f2dfaf5571eca, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 652897069, guid: e4a90ba45b4dfcb4593f2dfaf5571eca, type: 3}
+      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 652897069, guid: e4a90ba45b4dfcb4593f2dfaf5571eca, type: 3}
+      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 652897069, guid: e4a90ba45b4dfcb4593f2dfaf5571eca, type: 3}
+      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 652897069, guid: e4a90ba45b4dfcb4593f2dfaf5571eca, type: 3}
+      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 652897069, guid: e4a90ba45b4dfcb4593f2dfaf5571eca, type: 3}
+      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DoBlink
+      objectReference: {fileID: 0}
+    - target: {fileID: 652897069, guid: e4a90ba45b4dfcb4593f2dfaf5571eca, type: 3}
+      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MinimolGames.Blink, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 652897069, guid: e4a90ba45b4dfcb4593f2dfaf5571eca, type: 3}
+      propertyPath: onTakeDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300052467944535588, guid: e4a90ba45b4dfcb4593f2dfaf5571eca, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cba0970e13588b045b61239770341ffd, type: 2}
     - target: {fileID: 2300052468023497712, guid: e4a90ba45b4dfcb4593f2dfaf5571eca, type: 3}
       propertyPath: m_RootOrder
       value: 4

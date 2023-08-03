@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MinimolGames
+namespace MinimolGames.DamageSystem
 {
     public class PlayerHealth : CharacterHealth
     {
         [SerializeField] float timeBetweenDamages;
         float lastDamageTime = 0;
+        
         public override void TakeDamage(int amount)
         {
             float passedTime = Time.time-lastDamageTime;

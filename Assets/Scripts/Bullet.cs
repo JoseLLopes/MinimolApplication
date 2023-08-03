@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using MinimolGames.DamageSystem;
 
 namespace MinimolGames
 {
@@ -14,7 +15,7 @@ namespace MinimolGames
             StartCoroutine(WaitToDestroy());
         }
 
-        void Update()
+        void FixedUpdate()
         {
             transform.Translate(10f * Time.deltaTime * transform.forward, Space.World);
 

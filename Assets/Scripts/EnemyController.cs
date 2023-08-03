@@ -5,12 +5,13 @@ namespace MinimolGames
     public class EnemyController : MonoBehaviour
     {
         [SerializeField] float moveSpeed = 3f;
-        [SerializeField] PlayerController player;
+        public PlayerController player;
         void Update()
         {
             //var player = FindObjectOfType<PlayerController>();
             if (player == null) return;
             MoveTowards(player.transform);
+            transform.LookAt(player.transform.position);
         }
 
         void MoveTowards(Transform target)

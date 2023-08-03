@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MinimolGames
+namespace MinimolGames.DamageSystem
 {
     public interface IDamageable
     {

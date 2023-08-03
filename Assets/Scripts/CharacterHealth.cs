@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-namespace MinimolGames
+using UnityEngine.Events;
+namespace MinimolGames.DamageSystem
 {
     public class CharacterHealth : MonoBehaviour, IDamageable
     {
