@@ -6,6 +6,12 @@ namespace MinimolGames
     {
         [SerializeField] float moveSpeed = 3f;
         public PlayerController player;
+
+        void Awake(){
+            if(!player)
+                player = PlayerController.Instance;
+        }
+
         void Update()
         {
             //var player = FindObjectOfType<PlayerController>();

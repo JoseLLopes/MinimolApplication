@@ -17,5 +17,7 @@ namespace MinimolGames.DamageSystem
                 base.TakeDamage(amount);
             }
         }
+
+        
     }
 }

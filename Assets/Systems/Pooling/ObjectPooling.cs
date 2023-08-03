@@ -9,7 +9,7 @@ public class ObjectPooling : MonoBehaviour
     public static List<Pool> poolingRoots = new List<Pool>();
 
     
-    void Start(){
+    void Awake(){
         objectPoolingContainer = new GameObject("Pool Container");
     }
 

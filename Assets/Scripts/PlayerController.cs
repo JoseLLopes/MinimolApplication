@@ -6,7 +6,20 @@ namespace MinimolGames
     {
         [SerializeField] float moveSpeed = 5f;
         [SerializeField] float rotationSpeed = 5f;
+        public static PlayerController Instance { get; private set; }
 
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+        
         void Update()
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

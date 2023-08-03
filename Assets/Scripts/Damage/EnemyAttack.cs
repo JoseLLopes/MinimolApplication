@@ -9,14 +9,21 @@ namespace MinimolGames
     {
         Vector3 rayOffSet = new Vector3(0,1f,0);
         EnemyController enemyController;
+        [SerializeField] float timeBetweenAttacks = 0;
+        float lastAttackTime;
 
         void Start(){
             enemyController = GetComponent<EnemyController>();
         }
 
         void Update(){
-            Debug.Log(Vector3.Distance(enemyController.player.transform.position,transform.position));
-            if(Vector3.Distance(enemyController.player.transform.position,transform.position) < 1.1f){
+            float targetDistance = Vector3.Distance(enemyController.player.transform.position,transform.position);
+            
+            //Check if player is closer
+            if(targetDistance > 1.1)
+                return;
+
+            if(timeBetweenAttacks == 0 && Time.time - lastAttackTime >= timeBetweenAttacks){
                 RaycastHit hit;
                 
                 if(Physics.Raycast(transform.position + rayOffSet,transform.forward, out hit, 0.8f)){

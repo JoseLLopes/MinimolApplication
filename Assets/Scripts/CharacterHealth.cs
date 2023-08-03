@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using MinimolGames.Audio;
+
 namespace MinimolGames.DamageSystem
 {
     public class CharacterHealth : MonoBehaviour, IDamageable
     {
-        [SerializeField] float Health;
-        [SerializeField] float maxHealth;
+        [SerializeField]protected float Health;
+        [SerializeField]protected float maxHealth;
 
-        [Header("Sound")]
-        [SerializeField] AudioClip getHitSound;
-        [SerializeField] AudioSource audioSource;
         void Start(){
             Health = maxHealth;
         }
@@ -20,14 +19,14 @@ namespace MinimolGames.DamageSystem
         {
             if(Health > 0){
                 Health -= amount;
-                audioSource.PlayOneShot(getHitSound);
+                EnemiesSoundController.Instance.PlayHitAudio();
             }
             if(Health <= 0){
                 Death();
             }
         }
 
-        void Death(){
+        protected virtual void Death(){
             Destroy(gameObject);
         }
     }
