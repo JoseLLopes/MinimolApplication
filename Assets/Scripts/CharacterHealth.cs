@@ -9,6 +9,9 @@ namespace MinimolGames.DamageSystem
         [SerializeField] float Health;
         [SerializeField] float maxHealth;
 
+        [Header("Sound")]
+        [SerializeField] AudioClip getHitSound;
+        [SerializeField] AudioSource audioSource;
         void Start(){
             Health = maxHealth;
         }
@@ -17,6 +20,7 @@ namespace MinimolGames.DamageSystem
         {
             if(Health > 0){
                 Health -= amount;
+                audioSource.PlayOneShot(getHitSound);
             }
             if(Health <= 0){
                 Death();

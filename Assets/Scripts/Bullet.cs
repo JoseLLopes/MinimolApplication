@@ -9,6 +9,7 @@ namespace MinimolGames
     {
 
         [SerializeField] float timeToDesapear;
+        [SerializeField] float speed = 10f;
         
         void Start()
         {
@@ -17,17 +18,17 @@ namespace MinimolGames
 
         void FixedUpdate()
         {
-            transform.Translate(10f * Time.deltaTime * transform.forward, Space.World);
 
             RaycastHit hit;
 
-            if(Physics.Raycast(transform.position,transform.forward, out hit, 10f * Time.deltaTime)){
+            if(Physics.Raycast(transform.position,transform.forward, out hit, speed * 2 * Time.deltaTime)){
 
                 if(hit.transform.TryGetComponent<IDamageable>(out var damageable)){
                     damageable.TakeDamage(1);
                     ObjectPooling.DestroyObject(gameObject);
                 }
             }
+            transform.Translate(speed * Time.deltaTime * transform.forward, Space.World);
         }
 
         IEnumerator WaitToDestroy(){

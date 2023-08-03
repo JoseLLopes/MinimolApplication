@@ -40,5 +40,12 @@ Ativado o GPU Instancing no material, isso faz com que a GPU instancie objetos e
 ---
 ### __Vida do player__
 - Criado o script “PlayerHealth” herdando da classe “CharacterHealth”, sobrescrevendo o método “TakeDamage” e adicionando variáveis para controlar o espaço de tempo que o player não pode ser atingido.
-
+---
+### __Input de atirar__
+- Melhorada a jogabilidade, agora o player não precisa mais ficar clicando para atirar, basta segurar o botão esquerdo do mouse;
+A taxa de disparo é armazenada em uma variável, flexibilizando a criação de outros tipos de armas.
+---
+### __Ataque do inimigo__
+- Criado o script “EnemyAttack” que checa se o inimigo está próximo ao player, caso esteja é lançado um raycast curto para detectar e causar dano ao Player.
+- Foi removido o sistema de colisão por física para reduzir o consumo com cálculos de física quando se tem muitos inimigos.
 

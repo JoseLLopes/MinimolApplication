@@ -7,8 +7,14 @@ namespace MinimolGames
     {
         [SerializeField] GameObject bulletPrefab;
         [SerializeField] Transform spawnPoint;
-        [SerializeField] float shootSpeedRate;
+        [SerializeField] float rateOfFire;
         bool canShoot = true;
+        
+        [Header("Sound")]
+        [SerializeField] AudioClip shootSound;
+        [SerializeField] AudioSource audioSource;
+        
+
         void Update()
         {
             if (Input.GetMouseButton(0) && canShoot)
@@ -19,8 +25,9 @@ namespace MinimolGames
         }
 
         IEnumerator Shoot(){
+            audioSource.PlayOneShot(shootSound);
             ObjectPooling.InstantiateObject(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
-            yield return new WaitForSeconds(shootSpeedRate);
+            yield return new WaitForSeconds(rateOfFire);
             canShoot = true;
 
         }

@@ -13,6 +13,7 @@ namespace MinimolGames
         void Start(){
             enemyController = GetComponent<EnemyController>();
         }
+
         void Update(){
             Debug.Log(Vector3.Distance(enemyController.player.transform.position,transform.position));
             if(Vector3.Distance(enemyController.player.transform.position,transform.position) < 1.1f){
@@ -27,11 +28,5 @@ namespace MinimolGames
             }
         }
 
-        void OnDrawGizmosSelected()
-        {
-            // Draws a 5 unit long red line in front of the object
-            Gizmos.color = Color.red;
-            Gizmos.DrawRay(transform.position + rayOffSet,transform.forward*0.8f);
-        }
     }
 }
