@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Waves Settings
   m_EditorClassIdentifier: 
   waveList:
-  - SpawnTime: 1
-    creatures:
-    - {fileID: 4746893933013467878, guid: f5f21414eb0870f4dafcf22bfe601ba4, type: 3}
-    creaturesAmount: 3
   - SpawnTime: 0.8
     creatures:
     - {fileID: 4746893933013467878, guid: f5f21414eb0870f4dafcf22bfe601ba4, type: 3}
     creaturesAmount: 5
+  - SpawnTime: 0.7
+    creatures:
+    - {fileID: 4746893933013467878, guid: f5f21414eb0870f4dafcf22bfe601ba4, type: 3}
+    creaturesAmount: 10

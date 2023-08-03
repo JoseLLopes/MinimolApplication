@@ -1,5 +1,7 @@
 # MinimolApplication
 ---
+## __Sistemas do jogo__
+
 ### __Sistema de dano__ 
 Foi modificado o antigo sistema de detecção de colisão, onde o projétil verificava com um trigger se o objeto que foi colidido estava marcado com a Tag “Enemy”;
 
@@ -68,6 +70,22 @@ A taxa de disparo é armazenada em uma variável, flexibilizando a criação de 
 ### __Spawn de inimigos__
 - Criado o script “Spawner” para Instanciar as criaturas em uma área determinada no inspector, foi adicionado um “Gizmo” para ter noção visual da área de spawn;
 - Criado o Scriptable Object “SO_WavesSettings” e o struct “Wave” para conter informações do tempo entre o spawn de creaturas, os tipos de criaturas e a quantidade para cada wave;
+- Criado o script “WaveController” Para controlar em qual wave o jogador se encontra, quantas criaturas ainda estão vivas. Ele também controla o tempo de spawn para cada criatura, chama o spawner para instanciar e vai para próxima wave se os inimigos estiverem mortos;
+- Para auxiliar e remover a necessidade de conferir se todos os inimigos estão mortos, foi criado o script “WaveEnemy” que herda de “CharacterHealth” e sobrepõe o método “Death” fazendo uma chamada para “WaveController” remover o inimigo da lista de inimigos vivos.
 
+---
 
+### __Player Canvas UI__
+- Foi criado o script “PlayerUI” para controlar a barra de vida do jogador.
+- Foi criada a classe “HealthData” responsável por armazenar a vida e a vida máxima e repassar para o “PlayerUI” através do UnityEvent onTakeDamage, adicionado no script ”PlayerHeatlh”
+
+---
+
+## __Game Juice__ 
+
+### __Sons__
+- Criado o script “EnemiesSoundController” para controlar os sons dos inimigos, os inimigos quando são atingidos chamam o função neste script. Foi feito isso para que todos os inimigos usem apenas um “Audio Source” evitando o consumo de recursos desnecessários.
+
+### __Partículas__
+- Adicionadas partículas nos inimigos quando são atingidos para melhorar o feedback do jogo para o usuário
 

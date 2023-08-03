@@ -10,8 +10,9 @@ namespace MinimolGames
 
         [SerializeField] float timeToDesapear;
         [SerializeField] float speed = 10f;
+        [SerializeField] int damage;
         
-        void Start()
+        void OnEnable()
         {
             StartCoroutine(WaitToDestroy());
         }
@@ -24,7 +25,7 @@ namespace MinimolGames
             if(Physics.Raycast(transform.position,transform.forward, out hit, speed * 2 * Time.deltaTime)){
 
                 if(hit.transform.TryGetComponent<IDamageable>(out var damageable)){
-                    damageable.TakeDamage(1);
+                    damageable.TakeDamage(damage,transform.position);
                     ObjectPooling.DestroyObject(gameObject);
                 }
             }

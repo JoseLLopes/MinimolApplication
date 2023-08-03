@@ -6,7 +6,7 @@ public class PoolingDestroy : MonoBehaviour
 {
     [SerializeField] float timeToDestroy = 2f;
 
-    void Start()
+    void OnEnable()
     {
         StartCoroutine("AutoDestroy");
     }

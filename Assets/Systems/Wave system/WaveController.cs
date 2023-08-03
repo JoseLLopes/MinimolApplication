@@ -38,7 +38,6 @@ namespace MinimolGames.WaveSystem
         IEnumerator SpawnWaveCreatures(){
 
             int creaturesAmount = wavesSettings.waveList[currentWave].creaturesAmount-1;
-            Debug.Log(creaturesAmount);
             float waitTime = wavesSettings.waveList[currentWave].SpawnTime;
 
             for(int i = 0; i <= creaturesAmount ; i++){

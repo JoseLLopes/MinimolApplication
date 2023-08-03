@@ -6,7 +6,6 @@ namespace MinimolGames.Audio
 {
     public class EnemiesSoundController : MonoBehaviour
     {
-        [SerializeField] AudioClip getHit;
         [SerializeField] AudioSource audioSource;
         public static EnemiesSoundController Instance {get; private set;}
 
@@ -21,7 +20,7 @@ namespace MinimolGames.Audio
             }
         }
 
-        public void PlayHitAudio(){
+        public void PlayHitAudio(AudioClip getHit){
             audioSource.PlayOneShot(getHit);
         }
 

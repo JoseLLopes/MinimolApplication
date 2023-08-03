@@ -6,6 +6,6 @@ namespace MinimolGames.DamageSystem
 {
     public interface IDamageable
     {
-        public void TakeDamage(int amount);
+        public void TakeDamage(int amount, Vector3 damagePoint = default);
     }
 }
