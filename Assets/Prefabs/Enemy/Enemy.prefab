@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 860939907}
   - component: {fileID: 1046715771}
   - component: {fileID: -4833852687291765736}
-  - component: {fileID: -335704226875184347}
+  - component: {fileID: 5273513158529958282}
   - component: {fileID: 3210900638372719830}
   - component: {fileID: -2320730598604682380}
   m_Layer: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
   maxHealth: 2
   hitEffect: {fileID: 5047792321287428079, guid: 203b13ab807d8ad40811eb3c0a44be3b, type: 3}
   getHitAudioClip: {fileID: 8300000, guid: 9b44a51c7674ab249b2aa44e3d572abd, type: 3}
---- !u!114 &-335704226875184347
+--- !u!114 &5273513158529958282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,11 +90,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4746893933013467878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03543ae83f9b19b458a13cc9b633a427, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e5bda33c22c2e741b71bf5ca576f7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: -2320730598604682380}
+  animator: {fileID: 856601670134594979}
   player: {fileID: 0}
+  attackDistance: 1.1
+  enemyAttack: {fileID: 1046715771}
 --- !u!54 &3210900638372719830
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -200,8 +203,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TT_demo_zombie
       objectReference: {fileID: 0}
+    - target: {fileID: 856601670124978856, guid: b14953694d54eea4eb66f453e525024c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 85dcee813ae57d448b4cfd26bd57b08e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b14953694d54eea4eb66f453e525024c, type: 3}
+--- !u!95 &856601670134594979 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 856601670124978856, guid: b14953694d54eea4eb66f453e525024c, type: 3}
+  m_PrefabInstance: {fileID: 61783819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &856601670144365541 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 856601670117272814, guid: b14953694d54eea4eb66f453e525024c, type: 3}
