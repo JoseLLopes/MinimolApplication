@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace MinimolGames.Audio
 {
-    public class EnemiesSoundController : MonoBehaviour
+    public class SoundManager : MonoBehaviour
     {
         [SerializeField] AudioSource audioSource;
-        public static EnemiesSoundController Instance {get; private set;}
+        public static SoundManager Instance {get; private set;}
 
         void Awake(){
             if (Instance == null)
@@ -20,7 +20,7 @@ namespace MinimolGames.Audio
             }
         }
 
-        public void PlayHitAudio(AudioClip getHit){
+        public void Play(AudioClip getHit){
             audioSource.PlayOneShot(getHit);
         }
 

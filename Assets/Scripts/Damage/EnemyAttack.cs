@@ -8,17 +8,21 @@ namespace MinimolGames
     public class EnemyAttack : MonoBehaviour
     {
         Vector3 rayOffSet = new Vector3(0,1f,0);
-        EnemyController enemyController;
         [SerializeField] int damage;
-        [SerializeField] float timeBetweenAttacks = 0;
+        float timeBetweenAttacks = 0;
         float lastAttackTime;
+        [HideInInspector] public PlayerController player;
 
         void Start(){
-            enemyController = GetComponent<EnemyController>();
+            if(!player)
+                player = PlayerController.Instance;
         }
 
         void Update(){
-            float targetDistance = Vector3.Distance(enemyController.player.transform.position,transform.position);
+            if(!player)
+            return;
+            
+            float targetDistance = Vector3.Distance(player.transform.position,transform.position);
             
             //Check if player is closer
             if(targetDistance > 1.1)

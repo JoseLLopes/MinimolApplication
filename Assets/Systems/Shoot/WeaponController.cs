@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using MinimolGames.Audio;
+using MinimolGames.InputEvents;
 
-namespace MinimolGames
+namespace MinimolGames.PlayerShoot
 {
     public class WeaponController : MonoBehaviour
     {
@@ -9,27 +11,29 @@ namespace MinimolGames
         [SerializeField] Transform spawnPoint;
         [SerializeField] float rateOfFire;
         bool canShoot = true;
-        
+        PlayerInputEvents inputEvents;
+
         [Header("Sound")]
         [SerializeField] AudioClip shootSound;
-        [SerializeField] AudioSource audioSource;
         
 
-        void Update()
+        void Start()
         {
-            if (Input.GetMouseButton(0) && canShoot)
-            {
+            PlayerInputEvents.OnShoot += Shoot;
+        }
+
+        void Shoot(){
+            if(canShoot){
                 canShoot = false;
-                StartCoroutine(Shoot());
+                SoundManager.Instance.Play(shootSound);
+                ObjectPooling.InstantiateObject(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
+                StartCoroutine(waitToShoot());
             }
         }
 
-        IEnumerator Shoot(){
-            audioSource.PlayOneShot(shootSound);
-            ObjectPooling.InstantiateObject(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
+        IEnumerator waitToShoot(){
             yield return new WaitForSeconds(rateOfFire);
             canShoot = true;
-
         }
     }
 }

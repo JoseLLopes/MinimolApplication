@@ -1,9 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MinimolGames.Particles;
 
 namespace MinimolGames.DamageSystem
 {
+
+    [System.Serializable]
+    public class HealthData
+    {
+        public int maxHealth;
+        public int currentHealth;
+
+        public HealthData(int currentHealth, int maxHealth)
+        {
+            this.maxHealth = maxHealth;
+            this.currentHealth = currentHealth;
+        }
+    }
+
     public class CharacterHealth : MonoBehaviour, IDamageable
     {
         [SerializeField]protected int Health;
@@ -18,7 +33,7 @@ namespace MinimolGames.DamageSystem
             if(Health > 0){
                 Health -= damageData.amount;
                 if(hitEffect)
-                    ObjectPooling.InstantiateObject(hitEffect, damageData.damagePoint, transform.rotation);
+                    ParticlesManager.Instance.PlayBloodEffect(hitEffect,damageData.damagePoint,damageData.attackerPosition);
             }
             if(Health <= 0){
                 Death();

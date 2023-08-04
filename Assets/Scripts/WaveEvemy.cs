@@ -15,7 +15,7 @@ namespace MinimolGames.WaveSystem
         }
 
         public override void TakeDamage(DamageData damageData){
-            EnemiesSoundController.Instance.PlayHitAudio(getHitAudioClip);
+            SoundManager.Instance.Play(getHitAudioClip);
             base.TakeDamage(damageData);
         }
 

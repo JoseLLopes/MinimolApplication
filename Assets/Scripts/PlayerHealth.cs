@@ -6,19 +6,6 @@ using UnityEngine.Events;
 namespace MinimolGames.DamageSystem
 {
 
-    [System.Serializable]
-    public class HealthData
-    {
-        public int maxHealth;
-        public int currentHealth;
-
-        public HealthData(int currentHealth, int maxHealth)
-        {
-            this.maxHealth = maxHealth;
-            this.currentHealth = currentHealth;
-        }
-    }
-
 
     public class PlayerHealth : CharacterHealth
     {

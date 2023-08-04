@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 using MinimolGames.DamageSystem;
 
-namespace MinimolGames
+namespace MinimolGames.PlayerShoot
 {
     public class Bullet : MonoBehaviour
     {
@@ -25,7 +25,7 @@ namespace MinimolGames
             if(Physics.Raycast(transform.position,transform.forward, out hit, speed * 2 * Time.deltaTime)){
 
                 if(hit.transform.TryGetComponent<IDamageable>(out var damageable)){
-                    DamageData damageData = new DamageData(damage,transform.position);
+                    DamageData damageData = new DamageData(damage,hit.point,transform.position);
                     damageable.TakeDamage(damageData);
                     ObjectPooling.DestroyObject(gameObject);
                 }
