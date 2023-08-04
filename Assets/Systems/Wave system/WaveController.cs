@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Events;
 
 namespace MinimolGames.WaveSystem
 {
@@ -12,6 +13,8 @@ namespace MinimolGames.WaveSystem
         int currentWave = 0;
         List<GameObject> creaturesAlive = new List<GameObject>();
         public static WaveController Instance { get; private set; }
+
+        public UnityEvent onDefeatCreature;
 
         private void Awake()
         {
@@ -61,6 +64,7 @@ namespace MinimolGames.WaveSystem
         }
 
         public void DefeatCreature(GameObject creature){
+            onDefeatCreature?.Invoke();
             creaturesAlive.Remove(creature);
             if(!creaturesAlive.Any()){
                 NextWave();
