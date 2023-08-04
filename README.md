@@ -19,7 +19,8 @@ Foi modificado o antigo sistema de detecção de colisão, onde o projétil veri
 ---
 ### __Movimento do player e inimigo__
 - Foi modificado o script __“PlayerController”__ agora herda do script __“CharacterMovement”__;
-- Para o inimigo foi gerado um navigation e criado o script __“AiFollowPlayer”__ baseado em navmesh para fazer o inimigo seguir o player desviando dos obstáculos.
+- Para o inimigo foi gerado um navigation e criado o script __“AiBrain”__ baseado em navmesh para fazer o inimigo seguir o player desviando dos obstáculos e quando se aproximar o suficiente aplicar o dano.
+
 ---
 
 ### __Instanciando os projéteis__
@@ -96,3 +97,7 @@ Ativado o GPU Instancing no material, isso faz com que a GPU instancie objetos e
 - Adicionadas partículas nos inimigos quando são atingidos para melhorar o feedback do jogo para o usuário;
 - Precisei criar uma classe __“DamageData”__ para guardar: posição do atacante, ponto de colisão e dano. Para poder passar isso para o objeto que implementa a interface “IDamageable” e instanciar a partícula de dano na posição correta;
 - Criado o script __“ParticlesManager”__ para gerenciar, calcular rotação e instanciar na posição correta de acordo com o “DamageData”. 
+
+### __Animações__
+- Adicionadas animações básicas para player e inimigos;
+- Criado o script __“PlayerAnimationsController”__ para o player, ele controla as animações do player, animação andar para frente e para trás.
