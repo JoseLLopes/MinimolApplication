@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8957901155336734328}
   - component: {fileID: 3668897020668918806}
   m_Layer: 0
-  m_Name: HitEnemy_FX
+  m_Name: HitPlayer_FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +224,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.6603774, b: 0.0414896, a: 1}
+      maxColor: {r: 1, g: 0, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4058,7 +4058,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.02990388, g: 0.3018868, b: 0.11408907, a: 1}
+      maxColor: {r: 0.7075472, g: 0.14351194, b: 0.14351194, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4174,7 +4174,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.03203987, g: 0.4528302, b: 0.0715627, a: 1}
+      maxColor: {r: 0.6698113, g: 0.18009077, b: 0.18009077, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

@@ -88,4 +88,4 @@ A taxa de disparo é armazenada em uma variável, flexibilizando a criação de 
 
 ### __Partículas__
 - Adicionadas partículas nos inimigos quando são atingidos para melhorar o feedback do jogo para o usuário
-
+- Precisei criar uma classe “DamageData” para guardar: posição do atacante, ponto de colisão e dano. Para poder passar isso para o objeto que implementa a interface “IDamageable” e instanciar a partícula de dano na posição correta

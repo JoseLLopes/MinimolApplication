@@ -9,6 +9,7 @@ namespace MinimolGames
     {
         Vector3 rayOffSet = new Vector3(0,1f,0);
         EnemyController enemyController;
+        [SerializeField] int damage;
         [SerializeField] float timeBetweenAttacks = 0;
         float lastAttackTime;
 
@@ -29,7 +30,8 @@ namespace MinimolGames
                 if(Physics.Raycast(transform.position + rayOffSet,transform.forward, out hit, 0.8f)){
 
                     if(hit.transform.TryGetComponent<IDamageable>(out var damageable) && !hit.transform.CompareTag(transform.tag)){
-                        damageable.TakeDamage(1);
+                        DamageData damageData = new DamageData(damage,hit.point,transform.position);
+                        damageable.TakeDamage(damageData);
                     }
                 }
             }

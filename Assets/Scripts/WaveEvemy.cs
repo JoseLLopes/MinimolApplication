@@ -14,9 +14,9 @@ namespace MinimolGames.WaveSystem
             Health = maxHealth;
         }
 
-        public override void TakeDamage(int amount, Vector3 damagePoint){
+        public override void TakeDamage(DamageData damageData){
             EnemiesSoundController.Instance.PlayHitAudio(getHitAudioClip);
-            base.TakeDamage(amount,damagePoint);
+            base.TakeDamage(damageData);
         }
 
         protected override void Death(){

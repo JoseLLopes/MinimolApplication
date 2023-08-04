@@ -25,7 +25,8 @@ namespace MinimolGames
             if(Physics.Raycast(transform.position,transform.forward, out hit, speed * 2 * Time.deltaTime)){
 
                 if(hit.transform.TryGetComponent<IDamageable>(out var damageable)){
-                    damageable.TakeDamage(damage,transform.position);
+                    DamageData damageData = new DamageData(damage,transform.position);
+                    damageable.TakeDamage(damageData);
                     ObjectPooling.DestroyObject(gameObject);
                 }
             }

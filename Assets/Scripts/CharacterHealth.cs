@@ -13,12 +13,12 @@ namespace MinimolGames.DamageSystem
             Health = maxHealth;
         }
 
-        public virtual void TakeDamage(int amount, Vector3 damagePoint)
+        public virtual void TakeDamage(DamageData damageData)
         {
             if(Health > 0){
-                Health -= amount;
+                Health -= damageData.amount;
                 if(hitEffect)
-                    ObjectPooling.InstantiateObject(hitEffect,damagePoint,transform.rotation);
+                    ObjectPooling.InstantiateObject(hitEffect, damageData.damagePoint, transform.rotation);
             }
             if(Health <= 0){
                 Death();

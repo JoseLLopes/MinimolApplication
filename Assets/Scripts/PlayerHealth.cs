@@ -26,7 +26,7 @@ namespace MinimolGames.DamageSystem
         float lastDamageTime = 0;
         [HideInInspector] public UnityEvent<HealthData> onTakeDamage;
 
-        public override void TakeDamage(int amount, Vector3 damagePoint)
+        public override void TakeDamage(DamageData damageData)
         {
             float passedTime = Time.time-lastDamageTime;
 
@@ -34,7 +34,7 @@ namespace MinimolGames.DamageSystem
                 lastDamageTime = Time.time;
 
                 //Base of father TakeDamage Function
-                base.TakeDamage(amount,damagePoint);
+                base.TakeDamage(damageData);
 
                 //Create DamageData isntance
                 HealthData healthData = new HealthData(Health,maxHealth);
