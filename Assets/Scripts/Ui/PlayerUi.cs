@@ -21,17 +21,19 @@ namespace MinimolGames.UI
         [SerializeField] TMP_Text currentWaveText;
         [SerializeField] TMP_Text totalWaveEnemiesText;
 
-
+        
         void OnEnable(){
             if(!playerHealth)
                 playerHealth = PlayerController.Instance.GetComponent<PlayerHealth>();
             playerHealth.onTakeDamage.AddListener(UpdatePlayerLife);
             waveController.onDefeatCreature.AddListener(UpdateKilledEnemies);
+            waveController.onWaveChange.AddListener(UpdateWaveInfo);
         }
 
         void OnDisable(){
             playerHealth.onTakeDamage.RemoveListener(UpdatePlayerLife);
             waveController.onDefeatCreature.RemoveListener(UpdateKilledEnemies);
+            waveController.onWaveChange.RemoveListener(UpdateWaveInfo);
         }
 
         void UpdatePlayerLife(HealthData healthData){
@@ -41,6 +43,11 @@ namespace MinimolGames.UI
         void UpdateKilledEnemies(){
             killedEnemies++;
             killedEnemiesText.text = ""+killedEnemies;
+        }
+
+        void UpdateWaveInfo(int currentWave, int amountOfEnemies){
+            currentWaveText.text = "Wave: "+currentWave;
+            totalWaveEnemiesText.text = amountOfEnemies +" Creatures";
         }
 
     }

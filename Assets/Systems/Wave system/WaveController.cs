@@ -15,6 +15,8 @@ namespace MinimolGames.WaveSystem
         public static WaveController Instance { get; private set; }
 
         public UnityEvent onDefeatCreature;
+        public UnityEvent<int,int> onWaveChange;
+
 
         private void Awake()
         {
@@ -34,8 +36,11 @@ namespace MinimolGames.WaveSystem
 
         void NextWave(){
             currentWave++;
-            if(currentWave < wavesSettings.waveList.Count)
+            if(currentWave < wavesSettings.waveList.Count){
                 StartCoroutine(SpawnWaveCreatures());
+                onWaveChange?.Invoke(currentWave+1, wavesSettings.waveList[currentWave].creaturesAmount);
+            }
+            
         }
 
         IEnumerator SpawnWaveCreatures(){
