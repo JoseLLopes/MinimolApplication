@@ -13,7 +13,7 @@ namespace MinimolGames.Movement
         [SerializeField] Rigidbody rb;
         [SerializeField] float dashDuration;
         [SerializeField] AudioClip dashSound;
-        public float dashCooldown;
+        [SerializeField] float dashCooldown;
         float lastDashTime = 0;
 
         void OnEnable(){

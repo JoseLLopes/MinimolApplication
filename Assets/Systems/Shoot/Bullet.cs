@@ -29,13 +29,16 @@ namespace MinimolGames.PlayerShoot
                 if(hit.transform.TryGetComponent<IDamageable>(out var damageable)){
                     DamageData damageData = new DamageData(damage,hit.point,transform.position);
                     damageable.TakeDamage(damageData);
+                    ObjectPooling.DestroyObject(gameObject);
                     
                 }
                 //if not damageable
-                else{
+                else if(hit.transform.gameObject.layer != 7){
                     HitDefault(hit.point);
+                    ObjectPooling.DestroyObject(gameObject);
+
                 }
-                ObjectPooling.DestroyObject(gameObject);
+               
             }
 
             transform.Translate(speed * Time.deltaTime * transform.forward, Space.World);

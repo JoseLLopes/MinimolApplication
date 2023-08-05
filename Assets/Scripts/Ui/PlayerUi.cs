@@ -61,7 +61,8 @@ namespace MinimolGames.UI
         }
 
         void UpdateWaveInfo(){
-            currentWaveText.text = "Wave: "+waveController.currentWave+1;
+            int currentWaveToText = waveController.currentWave+1;
+            currentWaveText.text = "Wave: "+currentWaveToText;
             int amountOfEnemies = waveController.wavesSettings.waveList[waveController.currentWave].creaturesAmount;
             totalWaveEnemiesText.text =  amountOfEnemies+" Creatures";
         }

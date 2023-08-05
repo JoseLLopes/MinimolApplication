@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2728731296448604723, guid: 7088f75e7f89b20439cfa15989aaca4f, type: 3}
   spawnPoint: {fileID: 692329322867727216}
-  rateOfFire: 0.4
+  rateOfFire: 0.3
   shootSound: {fileID: 8300000, guid: 54f5c90aa0161f3408912d67f7860fca, type: 3}
 --- !u!1 &2210292007402844793
 GameObject:
@@ -150,7 +150,6 @@ GameObject:
   - component: {fileID: 5564844444424735760}
   - component: {fileID: 2300052468234397934}
   - component: {fileID: -3748014085277167988}
-  - component: {fileID: 836539283}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -188,7 +187,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  speedMultiplyer: 1
 --- !u!136 &3667100594035691876
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -295,22 +293,6 @@ MonoBehaviour:
   dashDuration: 0.2
   dashSound: {fileID: 8300000, guid: 7c1d67e51dc42e84db850a6e02162ab6, type: 3}
   dashCooldown: 1.5
-  dashEffect: {fileID: 8240504636244377657}
---- !u!114 &836539283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2300052468023497719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bbd9c6b230882440a1da6bbf133ec88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerWeapon: {fileID: 7788355838030270068}
-  playerMovement: {fileID: 0}
-  playerDash: {fileID: 0}
 --- !u!1 &3046583852382218190
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1937787840546698230, guid: b4a5949913f889946a0e7b72b6187b72, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2358162423233061473, guid: b4a5949913f889946a0e7b72b6187b72, type: 3}
       propertyPath: m_Mesh
@@ -503,11 +485,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4a5949913f889946a0e7b72b6187b72, type: 3}
---- !u!1 &8240504636244377657 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1937787840546698230, guid: b4a5949913f889946a0e7b72b6187b72, type: 3}
-  m_PrefabInstance: {fileID: 7545852129870951375}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8776795461613114434
 PrefabInstance:
   m_ObjectHideFlags: 0

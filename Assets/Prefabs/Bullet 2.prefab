@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3967487520254220483}
   - component: {fileID: 4314625071691542033}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,9 +56,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3967487520254220483}
     m_Modifications:
+    - target: {fileID: 1402584404299819034, guid: 745a87995944ab94caa447ec2061dbc4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925061754148376579, guid: 745a87995944ab94caa447ec2061dbc4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3575611928538805115, guid: 745a87995944ab94caa447ec2061dbc4, type: 3}
       propertyPath: m_Name
       value: BulletLite_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3575611928538805115, guid: 745a87995944ab94caa447ec2061dbc4, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4239277815306136001, guid: 745a87995944ab94caa447ec2061dbc4, type: 3}
       propertyPath: m_RootOrder
