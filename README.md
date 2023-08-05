@@ -65,6 +65,10 @@ Ativado o GPU Instancing no material, isso faz com que a GPU instancie objetos e
 - Melhorada a jogabilidade, agora o player não precisa mais ficar clicando para atirar, basta segurar o botão esquerdo do mouse;
 - A taxa de disparo é armazenada em uma variável, flexibilizando a criação de outros tipos de armas.
 
+---
+
+### __Dash do player__
+Criado um input (“F”) para o player dar um dash e deixar o jogo mais dinâmico.
 
 ---
 
@@ -86,6 +90,9 @@ Ativado o GPU Instancing no material, isso faz com que a GPU instancie objetos e
 ### __Player Canvas UI__
 - Foi criado o script __“PlayerUI”__ para controlar a barra de vida do jogador.
 - Foi criada a classe __“HealthData”__ responsável por armazenar a vida e a vida máxima e repassar para o __“PlayerUI”__ através do UnityEvent onTakeDamage, adicionado no script __”PlayerHeatlh”__
+- A ordem de execução dos scripts teve que ser configurada para o script do Player ser executado antes do script “PlayerUI”;
+- Agora a Ui mostra também a wave atual e quantos inimigos no total.
+
 
 ---
 

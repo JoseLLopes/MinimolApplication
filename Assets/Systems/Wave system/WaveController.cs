@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.Events;
+using MinimolGames.Audio;
 
 namespace MinimolGames.WaveSystem
 {
@@ -14,8 +15,13 @@ namespace MinimolGames.WaveSystem
         List<GameObject> creaturesAlive = new List<GameObject>();
         public static WaveController Instance { get; private set; }
 
-        public UnityEvent onDefeatCreature;
-        public UnityEvent<int,int> onWaveChange;
+        [HideInInspector] public UnityEvent onDefeatCreature;
+        [HideInInspector] public UnityEvent<int,int> onWaveChange;
+        [HideInInspector] public UnityEvent onFinishAllWaves;
+
+        [Header ("Sound")]
+        [SerializeField] AudioClip finishWaveSound;
+        [SerializeField] AudioClip finishGameSound;
 
 
         private void Awake()
@@ -35,14 +41,21 @@ namespace MinimolGames.WaveSystem
         }
 
         void NextWave(){
+            SoundManager.Instance.Play(finishWaveSound);
             currentWave++;
+
+            //Check if has more waves
             if(currentWave < wavesSettings.waveList.Count){
                 StartCoroutine(SpawnWaveCreatures());
                 onWaveChange?.Invoke(currentWave+1, wavesSettings.waveList[currentWave].creaturesAmount);
+            }else{
+                onFinishAllWaves?.Invoke();
+                SoundManager.Instance.Play(finishGameSound);
             }
             
         }
 
+        //Spawn all wave's creatures
         IEnumerator SpawnWaveCreatures(){
 
             int creaturesAmount = wavesSettings.waveList[currentWave].creaturesAmount-1;
@@ -71,7 +84,8 @@ namespace MinimolGames.WaveSystem
         public void DefeatCreature(GameObject creature){
             onDefeatCreature?.Invoke();
             creaturesAlive.Remove(creature);
-            if(!creaturesAlive.Any()){
+            if(!creaturesAlive.Any()) //if no more creatures alive
+            {
                 NextWave();
             }
         }

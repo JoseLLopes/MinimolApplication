@@ -22,7 +22,7 @@ namespace MinimolGames.DamageSystem
 
     public class CharacterHealth : MonoBehaviour, IDamageable
     {
-        [SerializeField]protected int Health;
+        protected int Health;
         [SerializeField]protected int maxHealth;
         [SerializeField]GameObject hitEffect;
         [SerializeField]AudioClip getHitSound;

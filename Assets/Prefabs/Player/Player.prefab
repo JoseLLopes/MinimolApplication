@@ -213,12 +213,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc4b81057a10d342aaf5666449efa8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
   maxHealth: 10
   hitEffect: {fileID: 5047792321287428079, guid: 0f4f1c3d48e66c24b8e48efce5129973, type: 3}
   getHitSound: {fileID: 8300000, guid: 9b44a51c7674ab249b2aa44e3d572abd, type: 3}
   timeBetweenDamages: 2
   onTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDie:
     m_PersistentCalls:
       m_Calls: []
 --- !u!54 &900581183481975991
@@ -249,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c93a585b4e1c1348a6aa2c8f9cd5a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 5
+  rotationSpeed: 8
 --- !u!114 &5564844444424735760
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 4746893933013467873}
   - component: {fileID: 860939907}
   - component: {fileID: -4833852687291765736}
-  - component: {fileID: 3210900638372719830}
-  - component: {fileID: -2320730598604682380}
   - component: {fileID: 1932529801644377434}
   - component: {fileID: 1185629700825035628}
   - component: {fileID: 7183705431018426333}
+  - component: {fileID: -2320730598604682380}
+  - component: {fileID: 3210900638372719830}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy lvl2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4746893933013467878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -7.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 856601670144365541}
@@ -65,47 +65,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6295903e9690ee249bcb28c32f11c4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 4
   hitEffect: {fileID: 5047792321287428079, guid: 203b13ab807d8ad40811eb3c0a44be3b, type: 3}
   getHitSound: {fileID: 8300000, guid: d5a3a72bbf15a8648b205c657e4627f7, type: 3}
---- !u!54 &3210900638372719830
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4746893933013467878}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
---- !u!195 &-2320730598604682380
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4746893933013467878}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3
-  m_Acceleration: 15
-  avoidancePriority: 50
-  m_AngularSpeed: 800
-  m_StoppingDistance: 1
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 2
 --- !u!114 &1932529801644377434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +112,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aiChase: {fileID: 1185629700825035628}
   damage: 1
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 0.5
+--- !u!195 &-2320730598604682380
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4746893933013467878}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 15
+  avoidancePriority: 50
+  m_AngularSpeed: 800
+  m_StoppingDistance: 1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 2
+--- !u!54 &3210900638372719830
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4746893933013467878}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1001 &61783819
 PrefabInstance:
   m_ObjectHideFlags: 0

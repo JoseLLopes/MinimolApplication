@@ -11,7 +11,8 @@ namespace MinimolGames.PlayerShoot
         [SerializeField] float timeToDesapear;
         [SerializeField] float speed = 10f;
         [SerializeField] int damage;
-        
+        [SerializeField] GameObject hitDefaultEffect;
+
         void OnEnable()
         {
             StartCoroutine(WaitToDestroy());
@@ -24,13 +25,24 @@ namespace MinimolGames.PlayerShoot
 
             if(Physics.Raycast(transform.position,transform.forward, out hit, speed * 2 * Time.deltaTime)){
 
+                //if hit something damageable
                 if(hit.transform.TryGetComponent<IDamageable>(out var damageable)){
                     DamageData damageData = new DamageData(damage,hit.point,transform.position);
                     damageable.TakeDamage(damageData);
-                    ObjectPooling.DestroyObject(gameObject);
+                    
                 }
+                //if not damageable
+                else{
+                    HitDefault(hit.point);
+                }
+                ObjectPooling.DestroyObject(gameObject);
             }
+
             transform.Translate(speed * Time.deltaTime * transform.forward, Space.World);
+        }
+
+        void HitDefault(Vector3 hitPosition){
+            ObjectPooling.InstantiateObject(hitDefaultEffect, hitPosition, transform.rotation);
         }
 
         IEnumerator WaitToDestroy(){

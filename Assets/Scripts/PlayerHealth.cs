@@ -12,11 +12,13 @@ namespace MinimolGames.DamageSystem
         [SerializeField] float timeBetweenDamages;
         float lastDamageTime = 0;
         [HideInInspector] public UnityEvent<HealthData> onTakeDamage;
+        public UnityEvent onPlayerDie;
 
         public override void TakeDamage(DamageData damageData)
         {
             float passedTime = Time.time-lastDamageTime;
 
+            //Guarantee that the player does not take too much damage in a short time
             if(lastDamageTime == 0 || passedTime >= timeBetweenDamages){
                 lastDamageTime = Time.time;
 
@@ -29,6 +31,10 @@ namespace MinimolGames.DamageSystem
             }
         }
 
-        
+        protected override void Death()
+        {
+            onPlayerDie?.Invoke();
+            base.Death();
+        }
     }
 }
