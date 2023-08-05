@@ -6557,6 +6557,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3748014085277167988, guid: e4a90ba45b4dfcb4593f2dfaf5571eca, type: 3}
+      propertyPath: dashDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2300052468023497712, guid: e4a90ba45b4dfcb4593f2dfaf5571eca, type: 3}
       propertyPath: m_RootOrder
       value: 5

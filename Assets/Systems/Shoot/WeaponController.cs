@@ -17,9 +17,13 @@ namespace MinimolGames.PlayerShoot
         [SerializeField] AudioClip shootSound;
         
 
-        void Start()
+        void OnEnable()
         {
             PlayerInputEvents.OnShoot += Shoot;
+        }
+
+        void OnDisable(){
+            PlayerInputEvents.OnShoot -= Shoot;
         }
 
         void Shoot(){
