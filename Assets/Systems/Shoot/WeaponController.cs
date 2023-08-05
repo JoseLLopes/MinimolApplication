@@ -7,9 +7,9 @@ namespace MinimolGames.PlayerShoot
 {
     public class WeaponController : MonoBehaviour
     {
-        [SerializeField] GameObject bulletPrefab;
+        public GameObject bulletPrefab;
         [SerializeField] Transform spawnPoint;
-        [SerializeField] float rateOfFire;
+        public float rateOfFire;
         bool canShoot = true;
         PlayerInputEvents inputEvents;
 

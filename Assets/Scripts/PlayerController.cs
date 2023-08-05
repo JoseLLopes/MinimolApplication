@@ -7,7 +7,7 @@ namespace MinimolGames
     public class PlayerController : CharacterMovement
     {
         public static PlayerController Instance { get; private set; }
-
+        
         private void Awake()
         {
             if (Instance == null)
@@ -28,5 +28,8 @@ namespace MinimolGames
             Move(input);
             
         }
+
+
+
     }
 }

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ccf16c49767fe41b45429a82594a4a, type: 3}
+  m_Name: UpgradeSettings
+  m_EditorClassIdentifier: 
+  fireRateProgress:
+  - 0.5
+  - 0.4
+  - 0.35
+  - 0.3
+  bulletProgress:
+  - {fileID: 2728731296448604723, guid: 7088f75e7f89b20439cfa15989aaca4f, type: 3}
+  - {fileID: 2728731296448604723, guid: ffb620d38dfb3784f8558a67b4ebf241, type: 3}
+  - {fileID: 2728731296448604723, guid: bd35a84b811e67245bfb37daa583dc6d, type: 3}
+  playerSpeedMultiplyerProgress:
+  - 1
+  - 1.1
+  - 1.15
+  - 1.18
+  - 1.2
+  dashCoolDownProgress:
+  - 1.3
+  - 1.1
+  - 0.9
+  - 0.7

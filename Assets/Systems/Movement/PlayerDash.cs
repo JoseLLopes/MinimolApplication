@@ -13,7 +13,7 @@ namespace MinimolGames.Movement
         [SerializeField] Rigidbody rb;
         [SerializeField] float dashDuration;
         [SerializeField] AudioClip dashSound;
-        [SerializeField] float dashCooldown;
+        public float dashCooldown;
         float lastDashTime = 0;
 
         void OnEnable(){
@@ -34,7 +34,6 @@ namespace MinimolGames.Movement
         }
 
         IEnumerator DoDash(){
-
             Vector3 dashDirection = new Vector3(PlayerInputEvents.horizontal,0,PlayerInputEvents.vertical);
             SoundManager.Instance.Play(dashSound);
             rb.AddForce(dashDirection * 20, ForceMode.Impulse);

@@ -9,14 +9,14 @@ namespace MinimolGames.WaveSystem
 {
     public class WaveController : MonoBehaviour
     {
-        [SerializeField] SO_WavesSettings wavesSettings;
+        [SerializeField] public SO_WavesSettings wavesSettings;
         [SerializeField] List<Spawner> spawnersList;
-        int currentWave = 0;
+        public int currentWave{ get; private set; }
         List<GameObject> creaturesAlive = new List<GameObject>();
         public static WaveController Instance { get; private set; }
 
         [HideInInspector] public UnityEvent onDefeatCreature;
-        [HideInInspector] public UnityEvent<int,int> onWaveChange;
+        [HideInInspector] public UnityEvent onWaveChange;
         [HideInInspector] public UnityEvent onFinishAllWaves;
 
         [Header ("Sound")]
@@ -47,7 +47,7 @@ namespace MinimolGames.WaveSystem
             //Check if has more waves
             if(currentWave < wavesSettings.waveList.Count){
                 StartCoroutine(SpawnWaveCreatures());
-                onWaveChange?.Invoke(currentWave+1, wavesSettings.waveList[currentWave].creaturesAmount);
+                onWaveChange?.Invoke();
             }else{
                 onFinishAllWaves?.Invoke();
                 SoundManager.Instance.Play(finishGameSound);

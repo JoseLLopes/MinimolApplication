@@ -7,7 +7,7 @@ namespace MinimolGames.Movement
     public class CharacterMovement : MonoBehaviour
     {
         [SerializeField]protected float speed;
-    
+        [HideInInspector] public float speedMultiplyer = 1;
         CharacterController characterController;
 
         virtual protected void Start(){
@@ -17,7 +17,7 @@ namespace MinimolGames.Movement
 
         protected void Move(Vector3 input)
         {
-            transform.Translate(speed * Time.deltaTime * input, Space.World);
+            transform.Translate(speed * speedMultiplyer * Time.deltaTime * input, Space.World);
         }
     }
 }

@@ -39,3 +39,27 @@ MonoBehaviour:
     - {fileID: 4746893933013467878, guid: b8d41e56457944f42acbdd085b8cac34, type: 3}
     - {fileID: 4746893933013467878, guid: e0d497e0df5d88649bb3653fc32f0b57, type: 3}
     creaturesAmount: 25
+  - SpawnTime: 0.5
+    creatures:
+    - {fileID: 4746893933013467878, guid: b8d41e56457944f42acbdd085b8cac34, type: 3}
+    - {fileID: 4746893933013467878, guid: e0d497e0df5d88649bb3653fc32f0b57, type: 3}
+    creaturesAmount: 30
+  - SpawnTime: 0.4
+    creatures:
+    - {fileID: 4746893933013467878, guid: b8d41e56457944f42acbdd085b8cac34, type: 3}
+    - {fileID: 4746893933013467878, guid: e0d497e0df5d88649bb3653fc32f0b57, type: 3}
+    creaturesAmount: 35
+  - SpawnTime: 0.5
+    creatures:
+    - {fileID: 4746893933013467878, guid: b8d41e56457944f42acbdd085b8cac34, type: 3}
+    - {fileID: 4746893933013467878, guid: e0d497e0df5d88649bb3653fc32f0b57, type: 3}
+    creaturesAmount: 40
+  - SpawnTime: 0.5
+    creatures:
+    - {fileID: 4746893933013467878, guid: b8d41e56457944f42acbdd085b8cac34, type: 3}
+    creaturesAmount: 40
+  - SpawnTime: 0.4
+    creatures:
+    - {fileID: 4746893933013467878, guid: b8d41e56457944f42acbdd085b8cac34, type: 3}
+    - {fileID: 4746893933013467878, guid: e0d497e0df5d88649bb3653fc32f0b57, type: 3}
+    creaturesAmount: 50

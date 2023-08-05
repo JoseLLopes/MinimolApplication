@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MinimolGames.Particles;
+using MinimolGames.Utils;
 using MinimolGames.Audio;
 
 namespace MinimolGames.DamageSystem
@@ -34,8 +34,10 @@ namespace MinimolGames.DamageSystem
         {
             if(Health > 0){
                 Health -= damageData.amount;
-                if(hitEffect)
-                    ParticlesManager.Instance.PlayBloodEffect(hitEffect,damageData.damagePoint,damageData.attackerPosition);
+                if(hitEffect){
+                    var hitRotation = EffectUtils.CalculateRotationByDamageDirection(damageData.damagePoint, damageData.attackerPosition);
+                    ObjectPooling.InstantiateObject(hitEffect, damageData.damagePoint, hitRotation);
+                }
                 if(getHitSound)
                     SoundManager.Instance.Play(getHitSound);
             }
