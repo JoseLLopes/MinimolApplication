@@ -5,7 +5,7 @@ using MinimolGames.Audio;
 
 namespace MinimolGames.DamageSystem
 {
-    public class DamagebleObject : CharacterHealth
+    public class DamageableObject : CharacterHealth
     {
 
         [SerializeField] GameObject destructedObject;

@@ -8,15 +8,9 @@ namespace MinimolGames.WaveSystem
 {
     public class WaveEvemy : CharacterHealth
     {       
-        [SerializeField] AudioClip getHitAudioClip;
 
         void OnEnable(){
             Health = maxHealth;
-        }
-
-        public override void TakeDamage(DamageData damageData){
-            SoundManager.Instance.Play(getHitAudioClip);
-            base.TakeDamage(damageData);
         }
 
         protected override void Death(){

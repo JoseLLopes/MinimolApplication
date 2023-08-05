@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MinimolGames.Particles;
+using MinimolGames.Audio;
 
 namespace MinimolGames.DamageSystem
 {
@@ -24,6 +25,7 @@ namespace MinimolGames.DamageSystem
         [SerializeField]protected int Health;
         [SerializeField]protected int maxHealth;
         [SerializeField]GameObject hitEffect;
+        [SerializeField]AudioClip getHitSound;
         void Start(){
             Health = maxHealth;
         }
@@ -34,6 +36,8 @@ namespace MinimolGames.DamageSystem
                 Health -= damageData.amount;
                 if(hitEffect)
                     ParticlesManager.Instance.PlayBloodEffect(hitEffect,damageData.damagePoint,damageData.attackerPosition);
+                if(getHitSound)
+                    SoundManager.Instance.Play(getHitSound);
             }
             if(Health <= 0){
                 Death();
