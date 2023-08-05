@@ -68,7 +68,7 @@ MonoBehaviour:
   Health: 0
   maxHealth: 2
   hitEffect: {fileID: 5047792321287428079, guid: 203b13ab807d8ad40811eb3c0a44be3b, type: 3}
-  getHitSound: {fileID: 8300000, guid: 9b44a51c7674ab249b2aa44e3d572abd, type: 3}
+  getHitSound: {fileID: 8300000, guid: d5a3a72bbf15a8648b205c657e4627f7, type: 3}
 --- !u!54 &3210900638372719830
 Rigidbody:
   m_ObjectHideFlags: 0

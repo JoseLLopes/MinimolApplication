@@ -288,6 +288,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 900581183481975991}
+  dashDuration: 0.2
+  dashSound: {fileID: 8300000, guid: 7c1d67e51dc42e84db850a6e02162ab6, type: 3}
+  dashCooldown: 1
 --- !u!1 &3046583852382218190
 GameObject:
   m_ObjectHideFlags: 0
