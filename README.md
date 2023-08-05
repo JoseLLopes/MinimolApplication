@@ -19,7 +19,8 @@ Foi modificado o antigo sistema de detecção de colisão, onde o projétil veri
 ---
 ### __Movimento do player e inimigo__
 - Foi modificado o script __“PlayerController”__ agora herda do script __“CharacterMovement”__;
-- Para o inimigo foi gerado um navigation e criado o script __“AiBrain”__ baseado em navmesh para fazer o inimigo seguir o player desviando dos obstáculos e quando se aproximar o suficiente aplicar o dano.
+- Para o inimigo foi gerado um navigation e criado uma state machine para controlar os estados do inimigo.
+- Foram criados dois estados Attack e Chase.
 
 ---
 
