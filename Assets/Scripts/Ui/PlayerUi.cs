@@ -10,11 +10,18 @@ namespace MinimolGames.UI
 {
     public class PlayerUi : MonoBehaviour
     {
-        [SerializeField] PlayerHealth playerHealth;
+        [Header("Player Info")]
+        PlayerHealth playerHealth;
         [SerializeField] Image healthBar;
         [SerializeField] TMP_Text killedEnemiesText;
+
+        [Header ("Wave Info")]
         [SerializeField] WaveController waveController;
         int killedEnemies = 0;
+        [SerializeField] TMP_Text currentWaveText;
+        [SerializeField] TMP_Text totalWaveEnemiesText;
+
+
         void OnEnable(){
             if(!playerHealth)
                 playerHealth = PlayerController.Instance.GetComponent<PlayerHealth>();

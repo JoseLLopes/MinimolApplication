@@ -10,8 +10,8 @@ namespace MinimolGames.Ai
         [SerializeField] AiChase aiChase;
         Vector3 rayOffSet = new Vector3(0,1f,0);
         [SerializeField] int damage;
-        float timeBetweenAttacks = 0;
-        float lastAttackTime;
+        [SerializeField] float timeBetweenAttacks;
+        float lastAttackTime = 0;
 
         public override AiState RunCurrentState()
         {
@@ -20,7 +20,7 @@ namespace MinimolGames.Ai
 
         public AiState Attack(){
 
-            if(timeBetweenAttacks == 0 && Time.time - lastAttackTime >= timeBetweenAttacks){
+            if(lastAttackTime == 0 || Time.time - lastAttackTime >= timeBetweenAttacks){
                 lastAttackTime = Time.time;
 
                 RaycastHit hit;

@@ -94,11 +94,23 @@ Ativado o GPU Instancing no material, isso faz com que a GPU instancie objetos e
 ### __Sons__
 - Criado o script __“SoundManager”__ para Gerenciar os efeitos sonoros.. Foi feito isso para que todos os efeitos usem apenas um “Audio Source” evitando o consumo de recursos desnecessários.
 
+---
+
 ### __Partículas__
 - Adicionadas partículas nos inimigos quando são atingidos para melhorar o feedback do jogo para o usuário;
 - Precisei criar uma classe __“DamageData”__ para guardar: posição do atacante, ponto de colisão e dano. Para poder passar isso para o objeto que implementa a interface “IDamageable” e instanciar a partícula de dano na posição correta;
 - Criado o script __“ParticlesManager”__ para gerenciar, calcular rotação e instanciar na posição correta de acordo com o “DamageData”. 
 
+---
+
 ### __Animações__
 - Adicionadas animações básicas para player e inimigos;
 - Criado o script __“PlayerAnimationsController”__ para o player, ele controla as animações do player, animação andar para frente e para trás.
+---
+### __Mudanças no visual__
+- Mudanças no visual do player e inimigo;
+- Mudanças no cenário.
+
+### __Objetos interativos__
+- Criado um script para objetos que podem ser quebrados com tiro;
+

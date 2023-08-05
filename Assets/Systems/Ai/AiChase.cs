@@ -24,7 +24,7 @@ namespace MinimolGames.Ai
                 return this;
 
             float targetDistance = Vector3.Distance(player.transform.position,agent.transform.position);
-
+            transform.LookAt(player.transform.position);
             if(targetDistance > aproachDistance){
                 agent.SetDestination(player.transform.position);
                 animator.SetBool("moving",true);

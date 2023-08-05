@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aiChase: {fileID: 1185629700825035628}
   damage: 1
+  timeBetweenAttacks: 1
 --- !u!1001 &61783819
 PrefabInstance:
   m_ObjectHideFlags: 0
