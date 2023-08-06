@@ -25,7 +25,7 @@ namespace MinimolGames.Ai
 
                 RaycastHit hit;
                 
-                if(Physics.Raycast(transform.position + rayOffSet,transform.forward, out hit, 0.8f)){
+                if(Physics.Raycast(transform.position + rayOffSet,transform.forward, out hit, 1f)){
                     
                     //Check if hit something damageable and if not is me or friend
                     if(hit.transform.TryGetComponent<IDamageable>(out var damageable) && !hit.transform.CompareTag(transform.tag)){

@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aiAttack: {fileID: 7183705431018426333}
   agent: {fileID: -2320730598604682380}
-  aproachDistance: 1.1
+  aproachDistance: 1.5
   animator: {fileID: 856601670134594979}
   player: {fileID: 0}
 --- !u!114 &7183705431018426333
